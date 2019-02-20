@@ -4,18 +4,20 @@
 
 This protocol uses MQTT to send and receive signals between bots.
 
-### About MQTT:
+### About MQTT
 MQTT is a lightweight M2M (Machine to Machine) or IoT protocol.
 It's main points of focus are data integrity and reliability
 
-### Why MQTT:
+### Why MQTT
 MQTT is perfect for the communication between our robots, because it is implemented in many languages.
 This means that all the robots can use the language they prefer, and are not limited by our protocol.
 
 More info about MQTT can be found on mqtt.org
 
 
-## Specifications:
+## Specifications
+
+### Channels
 MQTT uses channels. Each one of these channels is used to either transmit or receive signals to one bot
 This means that in total we will have 6 channels, 2 channels per bot and 3 bots in total.
 
@@ -29,7 +31,7 @@ R means that the specific bot uses this channel to receive data from the master
 
 A group should only use it's specified channels, and not communicate with the other channels
 
-## Signals
+### Signals
 
 Certain signals can be received over MQTT. The signals and their meaning are:
 ```
