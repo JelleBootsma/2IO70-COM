@@ -35,19 +35,19 @@ A group should only use it's specified channels, and not communicate with the ot
 
 Certain signals can be received over MQTT. The signals and their meaning are:
 ```
-available			--	A bot sends this signal to the system within 0.5 second once said bot has finished it's task and is ready for a new one
+available	--	A bot sends this signal to the system within 0.5 second once said bot has finished it's task and is ready for a new one
 
-takeItem			--	A bot receives this signal when they should take exactly one item from the belt. This signal is send only when the bot has indicated it is available
+takeItem	--	A bot receives this signal when they should take exactly one item from the belt. This signal is send only when the bot has indicated it is available
 
-emergency			--	A bot sends this signal when a problem occurs. If a bot recieves this signal it should stop it's functions.
+emergency	--	A bot sends this signal when a problem occurs. If a bot recieves this signal it should stop it's functions.
 
-placeItem			--	A bot sends this signal when they want to place an item on the belt. This bot will either receive a placeItemGranted or a placeItemDenied signal
+placeItem	--	A bot sends this signal when they want to place an item on the belt. This bot will either receive a placeItemGranted or a placeItemDenied signal
 
 placeItemGranted	-- 	A bot receives this signal when their request to place an item has been granted. The bot should place the item on the belt within 0.5 seconds
 
 placeItemDenied		-- 	A bot receives this signal when their request to place an item has been denied.
 
-startSequence		--	A bot sends this signal when it is ready to recieve items in a predefined sequence.
+startSequence	--	A bot sends this signal when it is ready to recieve items in a predefined sequence.
 
 finishedInstruction	--	A bot sends this signal when it is finished with their predefined sequence.
 
