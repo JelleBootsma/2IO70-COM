@@ -1,6 +1,6 @@
 # 2IO70-COM
 ## Communication protocol specifications for the 2IO70 project of 2019
-## V1.0
+## V1.1
 
 This protocol uses MQTT to send and receive signals between bots.
 
