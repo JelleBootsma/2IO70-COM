@@ -29,7 +29,9 @@ NAME CHANNEL = 'Bot[group number]_[T/R]'
 T means that the specific bot uses this channel to transmit data to the master
 R means that the specific bot uses this channel to receive data from the master
 
-A group should only use it's specified channels, and not communicate with the other channels
+A group should only use it's specified channels, and not communicate with the other channels!
+
+![image of system] (https://raw.githubusercontent.com/JelleTUE/2IO70-COM/master/images/brokerSystem.png)
 
 ### Signals
 
@@ -55,7 +57,6 @@ finishedInstruction	--	A bot sends this signal when it is finished with their pr
 ```
 
 A few python examples of the code are placed in the public repository on github.
-Note. These examples are written in python 2.7, but MQTT is also available for newer versions of python 3
  
 
 
