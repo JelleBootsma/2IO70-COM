@@ -31,7 +31,7 @@ R means that the specific bot uses this channel to receive data from the master
 
 A group should only use it's specified channels, and not communicate with the other channels!
 
-![image of system] (https://raw.githubusercontent.com/JelleTUE/2IO70-COM/master/images/brokerSystem.png)
+![image of system](https://raw.githubusercontent.com/JelleTUE/2IO70-COM/master/images/brokerSystem.png)
 
 ### Signals
 
