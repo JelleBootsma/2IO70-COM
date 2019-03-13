@@ -1,7 +1,7 @@
 # 2IO70-COM
 ## Communication protocol specifications for the 2IO70 project of 2019
 ## V1.1
-
+![map of belt](https://raw.githubusercontent.com/JelleTUE/2IO70-COM/master/images/plattegrond.png)
 This protocol uses MQTT to send and receive signals between bots.
 
 ### About MQTT
@@ -35,26 +35,36 @@ A group should only use it's specified channels, and not communicate with the ot
 
 ### Signals
 
-Certain signals can be received over MQTT. The signals and their meaning are:
+Certain signals can be sent and received over your MQTT channel.
+#####Signals you may send
 ```
-available		--	A bot sends this signal to the system within 0.5 second once said bot has finished it's task and is ready for a new one
+emergency		--	A bot sends this signal when it detects an error, and wants the entire system to go into emergency mode.
 
-takeItem		--	A bot receives this signal when they should take exactly one item from the belt. This signal is send only when the bot has indicated it is available
+available		--	'[Group 3 / 4]' A bot sends this signal to the system once said bot has finished it's task and is ready for a new one.
 
-emergency		--	A bot sends this signal when a problem occurs. If a bot recieves this signal it should stop it's functions.
+placeItem		--	A bot sends this signal when they want to place an item on the belt. This bot will either receive a placeItemGranted or a placeItemDenied signal.
 
-placeItem		--	A bot sends this signal when they want to place an item on the belt. This bot will either receive a placeItemGranted or a placeItemDenied signal
+finishedInstruction	--	'[Group 2]' A bot sends this signal when it is finished with their predefined sequence.
+```
 
-placeItemGranted	-- 	A bot receives this signal when their request to place an item has been granted. The bot should place the item on the belt within 0.5 seconds
+#####Signals you might receive
+```
+takeItem		--	A bot receives this signal when they should take exactly one disk from the belt. The disk will arrive in approximately 2 seconds. This signal is send only when the bot has indicated it is available
 
-placeItemDenied		-- 	A bot receives this signal when their request to place an item has been denied.
+emergency		--	A bot receives this signal when a problem has been detected by the system. If a bot receives this signal it should stop it's functions.
 
-startSequence		--	A bot sends this signal when it is ready to recieve items in a predefined sequence.
+placeItemGranted	-- 	'[Group 3 / 4]' A bot receives this signal when their request to place an item has been granted. The bot should place the item on the belt within 3 seconds
 
-finishedInstruction	--	A bot sends this signal when it is finished with their predefined sequence.
+placeItemDenied		-- 	'[Group 3 / 4]' A bot receives this signal when their request to place an item has been denied. Situations like this could occur during a sequence where the conveyor belt needs to be clean
 
+startSequence		--	'[Group 2'] The system sends this signal at most once per 2 minutes, when it is ready to provide a predefined sequence.
 
 ```
+
+Note that initially all bots will be considered free. There is no need to send an available signal at the boot of the system!
+
+####Some example communication:
+![sequence communication](https://raw.githubusercontent.com/JelleTUE/2IO70-COM/master/images/sequence.png)
 
 A few python examples of the code are placed in the public repository on github.
  
