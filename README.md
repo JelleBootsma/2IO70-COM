@@ -65,7 +65,7 @@ Note that initially all bots will be considered free. There is no need to send a
 
 Some example communication:
 ![sequence communication](https://raw.githubusercontent.com/JelleTUE/2IO70-COM/master/images/sequence.png)  
-![sequence communication](https://raw.githubusercontent.com/JelleTUE/2IO70-COM/master/images/placement.png)
+![sequence communication](https://raw.githubusercontent.com/JelleTUE/2IO70-COM/master/images/placement.PNG)
 
 A few python examples of the code are placed in the public repository on github.
  
