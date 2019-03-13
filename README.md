@@ -1,7 +1,7 @@
 # 2IO70-COM
 ## Communication protocol specifications for the 2IO70 project of 2019
 ## V1.1
-![map of belt](https://raw.githubusercontent.com/JelleTUE/2IO70-COM/master/images/plattegrond.png)
+![map of belt](https://raw.githubusercontent.com/JelleTUE/2IO70-COM/master/images/plattegrond.png)  
 This protocol uses MQTT to send and receive signals between bots.
 
 ### About MQTT
@@ -36,7 +36,7 @@ A group should only use it's specified channels, and not communicate with the ot
 ### Signals
 
 Certain signals can be sent and received over your MQTT channel.
-#####Signals you may send
+Signals you may send:  
 ```
 emergency		--	A bot sends this signal when it detects an error, and wants the entire system to go into emergency mode.
 
@@ -47,7 +47,7 @@ placeItem		--	A bot sends this signal when they want to place an item on the bel
 finishedInstruction	--	'[Group 2]' A bot sends this signal when it is finished with their predefined sequence.
 ```
 
-#####Signals you might receive
+Signals you might receive:  
 ```
 takeItem		--	A bot receives this signal when they should take exactly one disk from the belt. The disk will arrive in approximately 2 seconds. This signal is send only when the bot has indicated it is available
 
@@ -63,8 +63,9 @@ startSequence		--	'[Group 2'] The system sends this signal at most once per 2 mi
 
 Note that initially all bots will be considered free. There is no need to send an available signal at the boot of the system!
 
-####Some example communication:
-![sequence communication](https://raw.githubusercontent.com/JelleTUE/2IO70-COM/master/images/sequence.png)
+Some example communication:
+![sequence communication](https://raw.githubusercontent.com/JelleTUE/2IO70-COM/master/images/sequence.png)  
+![sequence communication](https://raw.githubusercontent.com/JelleTUE/2IO70-COM/master/images/placement.png)
 
 A few python examples of the code are placed in the public repository on github.
  
