@@ -44,14 +44,14 @@ available		--	'[Group 3 / 4]' A bot sends this signal to the system once said bo
 
 placeItem		--	A bot sends this signal when they want to place an item on the belt. This bot will either receive a placeItemGranted or a placeItemDenied signal.
 
-finishedInstruction	--	'[Group 2]' A bot sends this signal when it is finished with their predefined sequence.
+sequenceReceived--	'[Group 2]' A bot sends this signal when it received all disks of their predefined sequence
 ```
 
 Signals you might receive:  
 ```
 takeItem		--	A bot receives this signal when they should take exactly one disk from the belt. The disk will arrive in approximately 2 seconds. This signal is send only when the bot has indicated it is available
 
-emergency		--	A bot receives this signal when a problem has been detected by the system. If a bot receives this signal it should stop it's functions.
+reboot			--	A bot receives this signal in an emergency situation, when we want to reboot the system. All bots should go back to their initial state.
 
 placeItemGranted	-- 	'[Group 3 / 4]' A bot receives this signal when their request to place an item has been granted. The bot should place the item on the belt within 3 seconds
 
